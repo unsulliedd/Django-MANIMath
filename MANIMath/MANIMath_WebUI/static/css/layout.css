@@ -1,3 +1,9 @@
+@media (max-width: 768px) {
+    .nav_collapse {
+        margin: 8px;
+    }
+}
+
 /************** Theme **************/
 
 :root {
@@ -58,3 +64,60 @@ a, a:after {
     }
 
 /************** Common **************/
+
+
+/************** Navbar **************/
+
+.navbar {
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    transition: top 0.3s;
+    z-index: 1000;
+    flex-direction: row;
+    align-items: center;
+    white-space: nowrap;
+    background: rgba( 0, 0, 0, 0.3 );
+    backdrop-filter: blur( 2px );
+}
+.navbar_right {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.nav-link {
+    background: none;
+    border: none;
+    color: white;
+}
+
+    .nav-link:hover {
+        background: linear-gradient(to right, #43c6ac, #191654);
+        border-radius: 5px;
+        border: hidden;
+        padding-left: 5px;
+        transition: padding 0.3s linear;
+        color: white
+    }
+
+.navbar-brand {
+    padding: 8px;
+    background: linear-gradient(to right, #43c6ac, #191654);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.navbar-logo {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    vertical-align: bottom;
+}
+
+.navbar_left {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+/************** Navbar **************/
