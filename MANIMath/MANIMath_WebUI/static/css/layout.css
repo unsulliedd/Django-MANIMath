@@ -1,0 +1,60 @@
+/************** Theme **************/
+
+:root {
+    /* Light Theme */
+    --background-color-light: #f1f4f71f;
+    --secondary-background-color-light: #52616B;
+    --text-primary-color-light: #1E2022;
+    --text-highlight-light: #C9D6DF;
+    /* Dark Theme */
+    --background-color-dark: #222222;
+    --secondary-background-color-dark: #dedede;
+    --text-primary-color-dark: #00b4db;
+    --text-highlight-dark: #ff0303;
+}
+
+.lightmode {
+    --background-color: var(--background-color-light);
+    --secondary-background-color: var(--secondary-background-color-light);
+    --text-primary-color: var(--text-primary-color-light);
+    --text-highlight-color: var(--text-highlight-light);
+}
+
+.darkmode {
+    --background-color: var(--background-color-dark);
+    --secondary-background-color: var(--secondary-background-color-dark);
+    --text-primary-color: var(--text-primary-color-dark);
+    --text-highlight-color: var(--text-highlight-dark);
+}
+
+/************** Theme **************/
+
+
+/************** Common **************/
+
+html {
+    font-family: Arial, Helvetica, sans-serif;
+    position: relative;
+    min-height: 100%;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    margin-top: 100px;
+    margin-bottom: 60px;
+    background-color: var(--background-color);
+    color: var(--text-primary-color);
+}
+
+a, a:after {
+    color: var(--text-primary-color);
+    text-decoration: none;
+}
+
+    a:hover {
+        text-decoration: none;
+        color: var(--text-highlight-color)
+    }
+
+/************** Common **************/
