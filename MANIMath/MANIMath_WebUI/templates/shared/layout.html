@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{{ title }} - MANIMath</title>
+        {% load static %}
+        <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}" />
+        <link rel="stylesheet" type="text/css" href="{% static 'css/layout.css' %}" />
+        <link rel="stylesheet" type="text/css" href="{% static 'css/site.css' %}" />
+    </head>
+
+    <body>
+        {% include 'partials/_header.html' %}
+
+        <div class="main">
+            {% block content %}{% endblock %}
+        </div>
+
+        {% include 'partials/_footer.html' %}
+
+        {% block scripts %}
+        <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+        <script src="{% static 'js/site.js' %}"></script>
+        {% endblock %}
+    </body>
+</html>
