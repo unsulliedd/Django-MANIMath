@@ -35,12 +35,27 @@
     <Compile Include="MANIMath\settings.py" />
     <Compile Include="MANIMath\urls.py" />
     <Compile Include="MANIMath\wsgi.py" />
+    <Compile Include="MANIMath_WebUI\admin.py" />
+    <Compile Include="MANIMath_WebUI\apps.py" />
+    <Compile Include="MANIMath_WebUI\migrations\__init__.py" />
+    <Compile Include="MANIMath_WebUI\models.py" />
+    <Compile Include="MANIMath_WebUI\tests.py" />
+    <Compile Include="MANIMath_WebUI\urls.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MANIMath_WebUI\views.py" />
+    <Compile Include="MANIMath_WebUI\__init__.py" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="requirements.txt" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="MANIMath\" />
+    <Folder Include="MANIMath_WebUI\" />
+    <Folder Include="MANIMath_WebUI\migrations\" />
+    <Folder Include="MANIMath_WebUI\static\" />
+    <Folder Include="MANIMath_WebUI\templates\" />
+    <Folder Include="MANIMath_WebUI\templates\MANIMath_WebUI\" />
   </ItemGroup>
   <ItemGroup>
     <Interpreter Include="MANIMath_Venv\">
