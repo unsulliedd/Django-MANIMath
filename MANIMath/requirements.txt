@@ -5,3 +5,4 @@ setuptools==67.8.0
 sqlparse==0.4.4
 typing_extensions==4.6.3
 tzdata==2023.3
+fontawesomefree==6.4.0
