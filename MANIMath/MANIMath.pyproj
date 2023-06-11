@@ -49,6 +49,7 @@
     <Compile Include="MANIMath_WebUI\__init__.py" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="MANIMath_WebUI\templates\MANIMath_WebUI\index.html" />
     <Content Include="requirements.txt" />
   </ItemGroup>
   <ItemGroup>
