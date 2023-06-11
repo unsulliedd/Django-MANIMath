@@ -5,6 +5,7 @@
     <RootNamespace>MANIMath</RootNamespace>
     <InterpreterId>MSBuild|MANIMath_Venv|$(MSBuildProjectFullPath)</InterpreterId>
     <WebBrowserPort>61000</WebBrowserPort>
+    <TestFramework>unittest</TestFramework>
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
