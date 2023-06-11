@@ -56,6 +56,7 @@
     <Content Include="MANIMath_WebUI\static\js\bootstrap.bundle.min.js" />
     <Content Include="MANIMath_WebUI\static\js\bootstrap.bundle.min.js.map" />
     <Content Include="MANIMath_WebUI\static\js\site.js" />
+    <Content Include="MANIMath_WebUI\static\media\img\MANIMath_logo.png" />
     <Content Include="MANIMath_WebUI\templates\MANIMath_WebUI\index.html" />
     <Content Include="MANIMath_WebUI\templates\partials\_footer.html" />
     <Content Include="MANIMath_WebUI\templates\partials\_header.html" />
