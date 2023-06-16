@@ -58,6 +58,8 @@
     <Compile Include="MANIMath_WebUI\__init__.py" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="MANIMath_Account\templates\MANIMath_Account\login.html" />
+    <Content Include="MANIMath_Account\templates\MANIMath_Account\register.html" />
     <Content Include="MANIMath_WebUI\static\css\bootstrap.min.css" />
     <Content Include="MANIMath_WebUI\static\css\bootstrap.min.css.map" />
     <Content Include="MANIMath_WebUI\static\css\layout.css" />
