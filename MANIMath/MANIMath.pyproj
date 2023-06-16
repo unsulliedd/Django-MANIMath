@@ -37,6 +37,15 @@
     <Compile Include="MANIMath\settings.py" />
     <Compile Include="MANIMath\urls.py" />
     <Compile Include="MANIMath\wsgi.py" />
+    <Compile Include="MANIMath_Account\admin.py" />
+    <Compile Include="MANIMath_Account\apps.py" />
+    <Compile Include="MANIMath_Account\forms.py" />
+    <Compile Include="MANIMath_Account\migrations\__init__.py" />
+    <Compile Include="MANIMath_Account\models.py" />
+    <Compile Include="MANIMath_Account\tests.py" />
+    <Compile Include="MANIMath_Account\urls.py" />
+    <Compile Include="MANIMath_Account\views.py" />
+    <Compile Include="MANIMath_Account\__init__.py" />
     <Compile Include="MANIMath_WebUI\admin.py" />
     <Compile Include="MANIMath_WebUI\apps.py" />
     <Compile Include="MANIMath_WebUI\migrations\__init__.py" />
@@ -65,6 +74,13 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="MANIMath\" />
+    <Folder Include="MANIMath_Account\" />
+    <Folder Include="MANIMath_Account\migrations\" />
+    <Folder Include="MANIMath_Account\static\" />
+    <Folder Include="MANIMath_Account\static\css\" />
+    <Folder Include="MANIMath_Account\static\img\" />
+    <Folder Include="MANIMath_Account\templates\" />
+    <Folder Include="MANIMath_Account\templates\MANIMath_Account\" />
     <Folder Include="MANIMath_WebUI\" />
     <Folder Include="MANIMath_WebUI\migrations\" />
     <Folder Include="MANIMath_WebUI\static\" />
