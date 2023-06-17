@@ -2,36 +2,43 @@
 
 {% block content %}
 
-<div class="container">
-    <form method="post">
-        {% csrf_token %}
+{% include 'partials/_background.html' %}
 
-        <div class="form-group mr-1 mb-1">
-            {{ form.username.label_tag }}
-            {{ form.username }}
-            {% if form.username.errors %}
-            <ul class="errorlist">
-                {% for error in form.username.errors %}
-                <li>{{ error }}</li>
-                {% endfor %}
-            </ul>
-            {% endif %}
-        </div>
+<div class="container d-flex justify-content-center login_container">
+    <div class="account_group">
+        <form method="post" style="width:100%">
+            {% csrf_token %}
+            <div class="form-group">
+                <p class="account_form_label">{{ form.username.label_tag }}</p>
+                <p class="account_form_input">{{ form.username }}</p>
+                {% if form.username.errors %}
+                <ul class="validation_error">
+                    {% for error in form.username.errors %}
+                    <li>{{ error }}</li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+            </div>
 
-        <div class="form-group mr-1 mb-1">
-            <p class="mr-1">{{ form.password.label_tag }}</p>
-            <p>{{ form.password }}</p>
-            {% if form.password.errors %}
-            <ul class="errorlist">
-                {% for error in form.password.errors %}
-                <li>{{ error }}</li>
-                {% endfor %}
-            </ul>
-            {% endif %}
-        </div>
+            <div class="form-group">
+                <p class="account_form_label">{{ form.password.label_tag }}</p>
+                <p class="account_form_input">{{ form.password }}</p>
+                {% if form.password.errors %}
+                <ul class="validation_error">
+                    {% for error in form.password.errors %}
+                    <li>{{ error }}</li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+            </div>
+            <div class="form-group">
+                <input type="checkbox" id="remember_me" name="remember_me">
+                <label class="account_remember_me" for="remember_me">Remember Me</label>
+            </div>
 
-        <button type="submit">Login</button>
-    </form>
+            <button class="account_form_button" type="submit">Login</button>
+        </form>
+    </div>
 </div>
 
 {% endblock %}

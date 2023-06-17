@@ -1,0 +1,82 @@
+.login_container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.account_group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(3px);
+    border-radius: 10px;
+    padding: 24px;
+    width: 440px;
+    height: 100%;
+}
+
+.account_form_input input {
+    width: 100%;
+    color: wheat;
+    font-weight: 500;
+    border-image: linear-gradient(to right, #43c6ac, #191654);
+    background: transparent;
+    border-width: 2px;
+    border-style: solid;
+    border-image-slice: 1;
+    transition: all 0.3s ease-in;
+    padding: 8px;
+    box-sizing: border-box;
+    outline: 0;
+}
+
+    .account_form_input input:focus {
+        border-width: 2px;
+        border-style: solid;
+        border-image: linear-gradient(to right, #ff512f, #dd2476);
+        border-image-slice: 1;
+    }
+
+.account_form_label label {
+    color: wheat;
+    font-size: 24px;
+    background-image: linear-gradient(to right, #43c6ac, #191654);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+input[type="checkbox"] {
+    transform: scale(1.2);
+    margin-right: 5px;
+}
+
+.account_remember_me {
+    color: wheat;
+    margin-bottom: 5px;
+}
+
+.account_form_button {
+    width: 100%;
+    background-image: linear-gradient(to right, #43c6ac, #191654);
+    border-radius: 5px;
+    border: 2px;
+    cursor: pointer;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    transition: all 0.3s;
+    font-weight: 700;
+    margin-top: 20px;
+}
+
+    .account_form_button:hover {
+        background: linear-gradient(to right, #ff512f, #dd2476)
+    }
+
+.validation_error {
+    color: red;
+    list-style: none;
+    padding: 0;
+}
