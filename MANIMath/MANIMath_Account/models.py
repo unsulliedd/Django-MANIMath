@@ -1,3 +1,4 @@
+from django.utils import timezone
 from django.db import models
 from django.contrib.auth.models import User
 import os
@@ -13,8 +14,9 @@ class Profile(models.Model):
     id = models.AutoField(primary_key=True)
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     bio = models.TextField(blank=True, null=True, default=None)
-    profile_photo = models.ImageField(default='media/img/Default_Profile_Picture.png', upload_to=get_profile_photo_path, blank=True, null=True)
-    
+    profile_photo = models.ImageField(default='/static/media/img/Default_Profile_Picture.png', upload_to=get_profile_photo_path, blank=True, null=True)
+    create_date = models.DateTimeField(default=timezone.now)
+
     class Meta:
         verbose_name = 'User Profile'
         verbose_name_plural = 'User Profiles'
