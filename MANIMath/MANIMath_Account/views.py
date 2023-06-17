@@ -22,6 +22,12 @@ def login(request):
             user = authenticate(username=username, password=password)
             if user is not None:
                 auth_login(request, user)
+                remember_me = request.POST.get('remember_me')
+                if remember_me:
+                    request.session.set_expiry(None)  # Persistent cookie
+                else:
+                    request.session.set_expiry(0)
+
                 return redirect('home')
     else:
         form = LoginForm()
