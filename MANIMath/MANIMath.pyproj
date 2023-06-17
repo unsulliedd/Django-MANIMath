@@ -68,7 +68,9 @@
     <Content Include="MANIMath_WebUI\static\js\bootstrap.bundle.min.js.map" />
     <Content Include="MANIMath_WebUI\static\js\site.js" />
     <Content Include="MANIMath_WebUI\static\media\img\MANIMath_logo.png" />
+    <Content Include="MANIMath_WebUI\static\media\video\ContinuousMotion.gif" />
     <Content Include="MANIMath_WebUI\templates\MANIMath_WebUI\index.html" />
+    <Content Include="MANIMath_WebUI\templates\partials\_background.html" />
     <Content Include="MANIMath_WebUI\templates\partials\_footer.html" />
     <Content Include="MANIMath_WebUI\templates\partials\_header.html" />
     <Content Include="MANIMath_WebUI\templates\shared\layout.html" />
@@ -80,7 +82,6 @@
     <Folder Include="MANIMath_Account\migrations\" />
     <Folder Include="MANIMath_Account\static\" />
     <Folder Include="MANIMath_Account\static\css\" />
-    <Folder Include="MANIMath_Account\static\img\" />
     <Folder Include="MANIMath_Account\templates\" />
     <Folder Include="MANIMath_Account\templates\MANIMath_Account\" />
     <Folder Include="MANIMath_WebUI\" />
@@ -91,6 +92,7 @@
     <Folder Include="MANIMath_WebUI\static\media\" />
     <Folder Include="MANIMath_WebUI\static\media\img\" />
     <Folder Include="MANIMath_WebUI\static\media\icon\" />
+    <Folder Include="MANIMath_WebUI\static\media\video\" />
     <Folder Include="MANIMath_WebUI\templates\" />
     <Folder Include="MANIMath_WebUI\templates\MANIMath_WebUI\" />
     <Folder Include="MANIMath_WebUI\templates\partials\" />
