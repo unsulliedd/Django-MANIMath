@@ -116,6 +116,7 @@ a, a:after {
     background: linear-gradient(to right, #43c6ac, #191654);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    filter: brightness(2);
 }
 
 .navbar-logo {
@@ -130,5 +131,80 @@ a, a:after {
     flex-direction: row;
     justify-content: flex-end;
 }
+
+.navbar_account, .navbar-search {
+    display: inline-flex;
+    width: 100%;
+}
+.navbar_login_btn {
+    color: wheat;
+    border-color: wheat;
+    margin-right: 5px;
+}
+
+    .navbar_login_btn:hover {
+        background: wheat;
+        transition: background 0.3s linear;
+        border-color: wheat;
+        color: black;
+    }
+
+.navbar_signup_btn {
+    color: white;
+}
+
+    .navbar_signup_btn:hover {
+        background: linear-gradient(to right, #43c6ac, #191654);
+        color: wheat;
+    }
+
+.navbar-dropdown {
+    position: fixed;
+    border: none;
+    padding: 0;
+    margin-right: 30px;
+    margin-top: 1px;
+}
+
+    .navbar-dropdown.dropdown-toggle::after {
+        display: flex;
+        font: 28px FontAwesome !important;
+        font-size: large;
+        content: "\f142" !important;
+        color: white;
+        border: none !important;
+        width: 100%;
+        flex-direction: row;
+        align-items: center;
+        height: 33px;
+        justify-content: flex-end;
+    }
+
+.dropdown-text {
+    text-align: center;
+    background: linear-gradient(45deg, #09009f, #00ff95 80%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.social-panel {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px 0 10px;
+}
+
+.social-icon {
+    font-size: 20px;
+    background: linear-gradient(#8a2387, #e94057, #f27121);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+    .social-icon:hover {
+        font-size: 20px;
+        background: linear-gradient(to right, #43c6ac, #191654);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
 
 /************** Navbar **************/
