@@ -46,6 +46,7 @@
     background-image: linear-gradient(to right, #43c6ac, #191654);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    filter: brightness(2);
 }
 
 input[type="checkbox"] {
