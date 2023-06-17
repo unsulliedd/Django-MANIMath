@@ -12,3 +12,50 @@ window.onscroll = function () {
 }
 
 /************** Hide Navbar When Scroll **************/
+
+
+/************** Dark Mode Script **************/
+
+let darkMode = localStorage.getItem('darkMode');    // Check the 'darkMode' value stored in localStorage
+
+const darkModeToggle = document.querySelector('#dark-mode-toggle');
+const moonIcon = '<i class="fa-solid fa-moon"></i>';
+const sunIcon = '<i class="fa-solid fa-sun"></i>';
+
+const enableDarkMode = () => {
+    document.body.classList.remove('lightmode');    // Remove the 'lightmode' class from the body element
+    document.body.classList.add('darkmode');        // Add class to the body element
+    darkModeToggle.innerHTML = sunIcon;             // Update the icon
+    localStorage.setItem('darkMode', 'enabled');    // Update the 'darkMode' value in localStorage
+}
+
+const disableDarkMode = () => {
+    document.body.classList.remove('darkmode');     // Remove class from the body element
+    document.body.classList.add('lightmode');       // Remove the 'lightmode' class from the body element
+    darkModeToggle.innerHTML = moonIcon;            // Update the icon
+    localStorage.setItem('darkMode', null);         // Update the 'darkMode' value in localStorage
+}
+
+const applyTheme = () => {
+    const body = document.body;
+    if (darkMode === 'enabled') {
+        body.classList.add('darkmode');
+        darkModeToggle.innerHTML = sunIcon;         // Update the icon
+    } else {
+        body.classList.remove('darkmode');
+        darkModeToggle.innerHTML = moonIcon;        // Update the icon
+    }
+}
+
+darkModeToggle.addEventListener('click', () => {
+    darkMode = localStorage.getItem('darkMode');
+    if (darkMode !== 'enabled') {
+        enableDarkMode();
+    } else {
+        disableDarkMode();
+    }
+});
+
+applyTheme();  // Apply the theme
+
+/************** Dark Mode Script **************/
