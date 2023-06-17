@@ -42,6 +42,7 @@
     <Compile Include="MANIMath_Account\forms.py" />
     <Compile Include="MANIMath_Account\migrations\__init__.py" />
     <Compile Include="MANIMath_Account\models.py" />
+    <Compile Include="MANIMath_Account\signals.py" />
     <Compile Include="MANIMath_Account\tests.py" />
     <Compile Include="MANIMath_Account\urls.py" />
     <Compile Include="MANIMath_Account\views.py" />
