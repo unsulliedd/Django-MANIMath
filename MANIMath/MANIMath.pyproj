@@ -59,6 +59,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="MANIMath_Account\static\css\account.css" />
+    <Content Include="MANIMath_Account\static\media\img\Default_Profile_Picture.png" />
     <Content Include="MANIMath_Account\templates\MANIMath_Account\login.html" />
     <Content Include="MANIMath_Account\templates\MANIMath_Account\register.html" />
     <Content Include="MANIMath_WebUI\static\css\bootstrap.min.css" />
@@ -83,6 +84,9 @@
     <Folder Include="MANIMath_Account\migrations\" />
     <Folder Include="MANIMath_Account\static\" />
     <Folder Include="MANIMath_Account\static\css\" />
+    <Folder Include="MANIMath_Account\static\media\" />
+    <Folder Include="MANIMath_Account\static\media\img\" />
+    <Folder Include="MANIMath_Account\static\media\profile_photos\" />
     <Folder Include="MANIMath_Account\templates\" />
     <Folder Include="MANIMath_Account\templates\MANIMath_Account\" />
     <Folder Include="MANIMath_WebUI\" />
