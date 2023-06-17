@@ -30,7 +30,9 @@
                         <input name="q" class="form-control form-control-dark" placeholder="Search..."
                                value="{{ query }}">
                     </form>
-
+                    {% if user.is_authenticated %}
+                        {% include 'partials/_navbarProfile.html' %}
+                    {% else %}
                     <div class="navbar_account">
                         <a class="btn btn-outline-light navbar_login_btn" href="{% url 'login' %}">Login</a>
                         <a class="btn btn-outline-light navbar_signup_btn" href="{% url 'register' %}">Sign-up</a>
@@ -64,6 +66,7 @@
                             </div>
                         </div>
                     </div>
+                    {% endif %}
                 </div>
             </div>
         </div>
