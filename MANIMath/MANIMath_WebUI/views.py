@@ -17,6 +17,7 @@ def topic_list(request):
     topics = Topic.objects.all()
     categories = Category.objects.all()
 
+    category = request.GET.get('category', '')
     query = request.GET.get('q', '')
     if query:
         topics = topics.filter(
@@ -26,6 +27,8 @@ def topic_list(request):
         if not categories:
             categories = Category.objects.all()
 
+    if category:
+        topics = topics.filter(category__name=category)  
 
     return render(
         request, 
