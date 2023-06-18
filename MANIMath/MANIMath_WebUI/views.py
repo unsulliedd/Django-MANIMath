@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpRequest
 from datetime import datetime
+from django.db.models import Q
 from .models import *
 
 def home(request: HttpRequest):
@@ -17,14 +18,14 @@ def topic_list(request):
     categories = Category.objects.all()
 
     query = request.GET.get('q', '')
-    category = request.GET.get('category', '')
-
     if query:
-        topics = topics.filter(name__icontains=query)
-        categories = categories.filter(name__icontains=query)
+        topics = topics.filter(
+            Q(name__contains=query) | Q(category__name__contains=query)
+        )
+        categories = categories.filter(name__contains=query)       
+        if not categories:
+            categories = Category.objects.all()
 
-    if category:
-        topics = topics.filter(category__name=category)  
 
     return render(
         request, 
