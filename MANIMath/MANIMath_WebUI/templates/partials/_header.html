@@ -18,7 +18,7 @@
                             <a class="nav-link" href="{% url 'home' %}">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Functions</a>
+                            <a class="nav-link" href="{% url 'topic_list' %}">Topics</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="">About</a>
@@ -26,7 +26,7 @@
                     </ul>
                 </div>
                 <div class="navbar_left">
-                    <form class="navbar-search mx-1">
+                    <form class="navbar-search mx-1" method="GET" action="{% url 'topic_list' %}">
                         <input name="q" class="form-control form-control-dark" placeholder="Search..."
                                value="{{ query }}">
                     </form>
