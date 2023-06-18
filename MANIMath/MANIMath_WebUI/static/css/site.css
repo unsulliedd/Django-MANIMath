@@ -192,6 +192,7 @@
         color: var(--text-primary-color);
         width: 100%;
         display: inline-block;
+        background: white;
     }
 
         .list_item_text h2:hover {
