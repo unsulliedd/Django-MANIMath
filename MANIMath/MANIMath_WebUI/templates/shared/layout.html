@@ -13,10 +13,10 @@
     <link rel="stylesheet" type="text/css" href="{% static 'fontawesomefree/css/all.min.css' %}">
 </head>
 
-    <body>
+    <body class="lightmode">
         {% include 'partials/_header.html' %}
 
-        <div class="main lighhtmode">
+        <div class="main">
             {% block content %}{% endblock %}
         </div>
 

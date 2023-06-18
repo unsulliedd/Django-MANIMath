@@ -11,12 +11,13 @@
     --background-color-light: #f1f4f71f;
     --secondary-background-color-light: #52616B;
     --text-primary-color-light: #1E2022;
-    --text-highlight-light: #C9D6DF;
+    --text-highlight-light: wheat;
+
     /* Dark Theme */
     --background-color-dark: #222222;
     --secondary-background-color-dark: #dedede;
-    --text-primary-color-dark: #00b4db;
-    --text-highlight-dark: #ff0303;
+    --text-primary-color-dark: wheat;
+    --text-highlight-dark: #00b4db;
 }
 
 .lightmode {
