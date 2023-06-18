@@ -1,0 +1,49 @@
+{% extends "shared/layout.html" %}
+
+{% block content %}
+
+<div class="container topic_list_main">
+    <div class="topic_list_filter">
+        <div class="list_filter_panel">
+
+            <div class="filter_panel_search">
+                <form class="filter_panel_form" method="GET" action="{% url 'topic_list' %}">
+                    <input class="me-1" type="text" name="q" placeholder="Search..." value="{{ query }}">
+                    <button class="filter_panel_button btn btn-sm" type="submit">Search</button>
+                </form>
+            </div>
+
+            <div class="filter_panel_category">
+                <div class="category_list">
+                    {% for category in categories  %}
+                    <div class="category_list_item">
+                        <a href="{% url 'topic_list' %}?category={{ category.name }}">{{ category.name }}</a>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="topic_list">
+        {% for topic in topics %}
+        <div class="card_wrapper">
+            <a href="#">
+                <div class="topic_list_card card">
+                    <div class="list_card_image">
+                        <img class="card_img_top"
+                             src="{{ topic.image_url }}" alt="{{ topic.name }}">
+                    </div>
+                    <div class="list_item_text">
+                        <h2 href="#">
+                            {{ topic.name }}
+                        </h2>
+                    </div>
+                </div>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

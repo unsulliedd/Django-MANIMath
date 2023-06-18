@@ -75,6 +75,7 @@
     <Content Include="MANIMath_WebUI\static\media\img\MANIMath_logo.png" />
     <Content Include="MANIMath_WebUI\static\media\video\ContinuousMotion.gif" />
     <Content Include="MANIMath_WebUI\templates\MANIMath_WebUI\index.html" />
+    <Content Include="MANIMath_WebUI\templates\MANIMath_WebUI\topics.html" />
     <Content Include="MANIMath_WebUI\templates\partials\_background.html" />
     <Content Include="MANIMath_WebUI\templates\partials\_footer.html" />
     <Content Include="MANIMath_WebUI\templates\partials\_header.html" />
