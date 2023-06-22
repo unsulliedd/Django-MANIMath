@@ -89,13 +89,13 @@
 }
 
 .darkmode .filter_panel_button {
-    color:black;
+    color: black;
 }
 
-    .filter_panel_button:hover {
-        background: linear-gradient(to right, #43c6ac, #191654);
-        color: wheat;
-    }
+.filter_panel_button:hover {
+    background: linear-gradient(to right, #43c6ac, #191654);
+    color: wheat;
+}
 
 /* Filter Panel -category */
 .filter_panel_category {
@@ -122,13 +122,18 @@
     padding: 5px;
     margin-bottom: 10px;
 }
+
     .category_list_item:hover a {
-        color: var(--text-highlight-color);
+        color: wheat;
     }
 
-    .category_list_item:hover {
-        background: var(--secondary-background-color);
-    }
+.darkmode .category_list_item:hover a {
+    color: var(--text-highlight-color);
+}
+
+.category_list_item:hover {
+    background: var(--secondary-background-color);
+}
 
 .darkmode .category_list_item {
     box-shadow: 0 2px 8px rgb(256 256 256 / 60%)
@@ -142,6 +147,12 @@
     justify-items: center;
     width: 100%;
     height: 100%;
+}
+
+.card_wrapper {
+    width: 100%;
+    max-width: 220px;
+    margin-bottom: 20px;
 }
 
 .topic_list_card {
@@ -162,12 +173,17 @@
 }
 
     .topic_list_card:hover {
-        box-shadow: 0 5px 8px rgb(0 0 0 / 50%); /* Light Mode */
+        box-shadow: 0 5px 8px rgb(0 0 0 / 50%);
     }
 
-.darkmode .topic_list_card:hover {
-    box-shadow: 0 5px 8px rgb(256 256 256 / 30%); /* Dark Mode */
+.darkmode .topic_list_card {
+    background: var(--priamry-background-color);
+    box-shadow: inset 0px 0px 10px 0px rgb(256 256 256 / 30%);
 }
+
+    .darkmode .topic_list_card:hover {
+        box-shadow: 0px 0px 10px 5px rgb(256 256 256 / 30%)
+    }
 
 .list_card_image {
     padding: 0.5rem;
@@ -178,8 +194,13 @@
 }
 
 .card_img_top {
-    max-width: 75%;
     object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.darkmode .card_img_top {
+    filter: invert(1);
 }
 
 .list_item_text {
@@ -192,7 +213,6 @@
         color: var(--text-primary-color);
         width: 100%;
         display: inline-block;
-        background: white;
     }
 
         .list_item_text h2:hover {
