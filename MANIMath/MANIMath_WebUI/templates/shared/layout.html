@@ -11,20 +11,21 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/site.css' %}" />
     <link rel="stylesheet" type="text/css" href="{% static 'css/account.css' %}" />
     <link rel="stylesheet" type="text/css" href="{% static 'fontawesomefree/css/all.min.css' %}">
+    <link rel="icon" type="image/png" href="{% static 'media/img/favicon.ico' %}">
 </head>
 
-    <body class="lightmode">
-        {% include 'partials/_header.html' %}
+<body class="lightmode">
+    {% include 'partials/_header.html' %}
 
-        <div class="main">
-            {% block content %}{% endblock %}
-        </div>
+    <div class="main">
+        {% block content %}{% endblock %}
+    </div>
 
-        {% include 'partials/_footer.html' %}
+    {% include 'partials/_footer.html' %}
 
-        {% block scripts %}
-        <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
-        <script src="{% static 'js/site.js' %}"></script>
-        {% endblock %}
-    </body>
+    {% block scripts %}
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'js/site.js' %}"></script>
+    {% endblock %}
+</body>
 </html>

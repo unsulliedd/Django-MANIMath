@@ -82,6 +82,7 @@
     <Content Include="MANIMath_WebUI\templates\partials\_header.html" />
     <Content Include="MANIMath_WebUI\templates\shared\layout.html" />
     <Content Include="requirements.txt" />
+    <Content Include="MANIMath_WebUI\static\media\img\favicon.ico" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="MANIMath\" />
