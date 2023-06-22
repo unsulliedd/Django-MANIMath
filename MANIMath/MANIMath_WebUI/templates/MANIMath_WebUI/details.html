@@ -1,0 +1,49 @@
+{% extends "shared/layout.html" %}
+
+{% block content %}
+
+<div class="container topic_detail_main">
+    <div class="topic_detail">
+        <div class="detail_description">
+            <h2>{{ topic.name }}</h2>
+            <p>{{ topic.description }}</p>
+        </div>
+        <div class="detail_panel_wrapper">
+            <div class="detail_panel">
+                <div class="detail_image">
+                    <img src="{{ topic.image_url }}" />
+                </div>
+                <div>
+                    <div class="detail_info">
+                        <div class="detail_info_text">
+                            <p>
+                                <span class="detail_info_header">Name: </span>
+                                <span>{{ topic.name }}</span>
+                            </p>
+                            <p>
+                                <span class="detail_info_header">Category: </span>
+                                <span><a href="{% url 'topic_list' %}?category={{ topic.category }}">{{ topic.category }}</a></span>
+                            </p>
+                        </div>
+                        {% if  topic.defination_url %}
+                        <div class="detail_info_img">
+                            <img src="{{ topic.defination_url }}" />
+                        </div>
+                        {% endif%}
+                    </div>
+                </div>
+            </div>
+            <div class="detail_info_btn">
+                <a class="detail_create_btn btn" href="#">
+                    Create {{ topic.name }} Animation
+                </a>
+            </div>
+        </div>
+
+    </div>
+    <div>
+        <h3>Recently Created Animations</h3>
+    </div>
+</div>
+
+{% endblock%}

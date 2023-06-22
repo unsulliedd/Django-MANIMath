@@ -222,3 +222,119 @@
         }
 
 /************* Topic List *************/
+
+
+/************* Topic Detail *************/
+
+.topic_detail_main {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: 100%;
+    flex-wrap: nowrap;
+}
+
+.topic_detail {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.detail_description {
+    width: 70%;
+    margin-right: 10px;
+    padding: 10px;
+}
+
+    .detail_description h2 {
+        color: var(--text-highlight-color);
+        text-indent: 24px;
+    }
+
+    .detail_description p {
+        text-indent: 25px;
+    }
+
+.detail_panel_wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    padding: 10px;
+}
+
+.detail_panel {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    background: rgba( 255, 255, 255, 0.5 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    padding: 10px;
+}
+
+.darkmode .detail_panel {
+    background-color: var(--primary-background-color);
+    box-shadow: 0 5px 8px rgb(256 256 256 / 30%);
+}
+
+.detail_image img {
+    padding: 20px;
+    width: 100%;
+    height: 300px;
+}
+
+.darkmode .detail_image img {
+    filter: invert(1);
+}
+
+.detail_info {
+    display: flex;
+    flex-direction: column;
+}
+
+div.detail_info_text .detail_info_header {
+    color: var(--text-highlight-color) !important;
+}
+
+.detail_info_text span, .detail_info_text a {
+    color: var(--text-primary-color);
+}
+
+    .detail_info_text a:hover {
+        color: var(--text-highlight-color);
+    }
+
+.detail_info_img {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+    .detail_info_img img {
+        padding: 20px;
+        width: 80%;
+    }
+
+.darkmode .detail_info_img img {
+    filter: invert(1);
+}
+
+.detail_info_btn {
+    margin-top: 20px;
+}
+
+.detail_create_btn {
+    background: linear-gradient(to right, #bdc3c7, #2c3e50);
+    border: none;
+    color: white;
+}
+
+    .detail_create_btn:hover {
+        background: linear-gradient(to right, #005aa7, #fffde4);
+        color: var(--text-highlight-color);
+    }
+
+/************* Topic Detail *************/
