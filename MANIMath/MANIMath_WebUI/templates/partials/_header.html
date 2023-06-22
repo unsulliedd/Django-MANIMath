@@ -1,6 +1,7 @@
 <header>
     <nav id="navbar" class="navbar navbar-expand-md navbar-toggleable-sm">
         <div class="container">
+            {% load static %}
             <a class="navbar-brand" style="color:wheat" href="{% url 'home' %}">
                 <img class="navbar-logo" src="{% static 'media/img/MANIMath_logo.png' %}" alt="">MANIMath
             </a>
@@ -31,7 +32,7 @@
                                value="{{ query }}">
                     </form>
                     {% if user.is_authenticated %}
-                        {% include 'partials/_navbarProfile.html' %}
+                    {% include 'partials/_navbarProfile.html' %}
                     {% else %}
                     <div class="navbar_account">
                         <a class="btn btn-outline-light navbar_login_btn" href="{% url 'login' %}">Login</a>
