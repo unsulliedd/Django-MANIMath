@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.http import HttpRequest
 from datetime import datetime
 from django.db.models import Q
@@ -39,5 +39,18 @@ def topic_list(request):
             'topics': topics,
             'categories': categories,
             'query': query
+        }
+    )
+
+def topic_detail(request, topic_name):
+
+    topic = get_object_or_404(Topic, name=topic_name)
+
+    return render(
+        request, 
+        'MANIMath_WebUI/details.html', 
+        {
+            'title' : topic_name,
+            'topic': topic,
         }
     )
