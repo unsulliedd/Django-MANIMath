@@ -66,3 +66,24 @@ class SortModel(models.Model):
         verbose_name_plural = 'Sort Algorithm Model'
     def __str__(self):
         return f"{self.id} - {self.user.username.capitalize()} - {self.topic.name.capitalize()}"
+
+class SearchModel(models.Model):
+    id = models.AutoField(primary_key=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    topic = models.ForeignKey(Topic, on_delete=models.CASCADE)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    custom_animation_name = models.CharField(max_length=256, blank=True, null=True)
+    input_array = models.CharField(max_length=128,blank=True, null=True)
+    create_date = models.DateTimeField(default=timezone.now, editable=False)
+
+    def save(self, *args, **kwargs):
+        if not self.custom_animation_name:
+            self.custom_animation_name = f"{self.topic.name.capitalize()}-{self.id}"
+        super().save(*args, **kwargs)
+
+    class Meta:
+        verbose_name = 'Search Algorithm Model'
+        verbose_name_plural = 'Search Algorithm Model'
+
+    def __str__(self):
+        return f"{self.id} - {self.user.username.capitalize()} - {self.topic.name.capitalize()}"
