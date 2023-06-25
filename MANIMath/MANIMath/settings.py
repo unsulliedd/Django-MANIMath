@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'MANIMath_WebUI',
     'MANIMath_Account',
     'MANIMath_Data',
+    'MANIMath_Api',
     'fontawesomefree',
 ]
 
