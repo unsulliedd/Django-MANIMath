@@ -41,8 +41,8 @@ class RootFindingModel(models.Model):
         super().save(*args, **kwargs)
 
     class Meta:
-        verbose_name = 'Search Algorithm Model'
-        verbose_name_plural = 'Search Algorithm Model'
+        verbose_name = 'Root Finding Algorithm Model'
+        verbose_name_plural = 'Root Finding Algorithm Model'
 
     def __str__(self):
         return f"{self.id} - {self.user.username.capitalize()} - {self.topic.name.capitalize()}"
