@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'MANIMath_WebUI',
     'MANIMath_Account',
+    'MANIMath_Data',
     'fontawesomefree',
 ]
 
