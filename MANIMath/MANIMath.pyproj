@@ -56,11 +56,11 @@
     <Compile Include="MANIMath_Api\views.py" />
     <Compile Include="MANIMath_Api\__init__.py" />
     <Compile Include="MANIMath_Data\admin.py" />
+    <Compile Include="MANIMath_Data\animations.py" />
     <Compile Include="MANIMath_Data\apps.py" />
     <Compile Include="MANIMath_Data\migrations\__init__.py" />
     <Compile Include="MANIMath_Data\models.py" />
     <Compile Include="MANIMath_Data\tests.py" />
-    <Compile Include="MANIMath_Data\views.py" />
     <Compile Include="MANIMath_Data\__init__.py" />
     <Compile Include="MANIMath_WebUI\admin.py" />
     <Compile Include="MANIMath_WebUI\apps.py" />
