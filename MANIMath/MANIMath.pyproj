@@ -50,6 +50,7 @@
     <Compile Include="MANIMath_Api\admin.py" />
     <Compile Include="MANIMath_Api\apps.py" />
     <Compile Include="MANIMath_Api\migrations\__init__.py" />
+    <Compile Include="MANIMath_Api\serializers.py" />
     <Compile Include="MANIMath_Api\tests.py" />
     <Compile Include="MANIMath_Api\urls.py" />
     <Compile Include="MANIMath_Api\views.py" />
