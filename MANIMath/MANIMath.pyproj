@@ -64,6 +64,7 @@
     <Compile Include="MANIMath_Data\__init__.py" />
     <Compile Include="MANIMath_WebUI\admin.py" />
     <Compile Include="MANIMath_WebUI\apps.py" />
+    <Compile Include="MANIMath_WebUI\forms.py" />
     <Compile Include="MANIMath_WebUI\migrations\__init__.py" />
     <Compile Include="MANIMath_WebUI\models.py" />
     <Compile Include="MANIMath_WebUI\tests.py" />
