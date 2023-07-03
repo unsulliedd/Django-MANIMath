@@ -11,5 +11,5 @@ urlpatterns = [
     path('topics', views.topic_list, name='topic_list'),
     path('topics/<str:category>', views.topic_list, name='topic_list_category'),
     path('topics/detail/<str:topic_name>/', views.topic_detail, name='topic_detail'),
-
+    path('create_animation/<str:topic_name>/', views.create_animation, name='create_animation'),
 ]
