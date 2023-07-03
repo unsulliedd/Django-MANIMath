@@ -15,7 +15,7 @@ class FunctionModel(models.Model):
 
     def save(self, *args, **kwargs):
         if not self.custom_animation_name:
-            self.custom_animation_name = f"{self.topic.name.capitalize()}-{self.id}"
+            self.custom_animation_name = f"{self.topic.name.capitalize()}-{self.create_date.strftime('%Y%m%d%H%M%S')}"
         super().save(*args, **kwargs)
 
     class Meta:
@@ -23,7 +23,7 @@ class FunctionModel(models.Model):
         verbose_name_plural = 'Function Model'
 
     def __str__(self):
-        return f"{self.id} - {self.user.username.capitalize()} - {self.topic.name.capitalize()}"
+        return f"{self.user.username.capitalize()} - {self.topic.name.capitalize()} - {self.create_date.strftime('%Y%m%d%H%M%S')}"
 
 class RootFindingModel(models.Model):
     id = models.AutoField(primary_key=True)
@@ -37,7 +37,7 @@ class RootFindingModel(models.Model):
 
     def save(self, *args, **kwargs):
         if not self.custom_animation_name:
-            self.custom_animation_name = f"{self.topic.name.capitalize()}-{self.id}"
+            self.custom_animation_name = f"{self.topic.name.capitalize()}-{self.create_date.strftime('%Y%m%d%H%M%S')}"
         super().save(*args, **kwargs)
 
     class Meta:
@@ -45,7 +45,7 @@ class RootFindingModel(models.Model):
         verbose_name_plural = 'Root Finding Algorithm Model'
 
     def __str__(self):
-        return f"{self.id} - {self.user.username.capitalize()} - {self.topic.name.capitalize()}"
+        return f"{self.user.username.capitalize()} - {self.topic.name.capitalize()} - {self.create_date.strftime('%Y%m%d%H%M%S')}"
 
 class SortModel(models.Model):
     id = models.AutoField(primary_key=True)
@@ -58,15 +58,14 @@ class SortModel(models.Model):
     
     def save(self, *args, **kwargs):
         if not self.custom_animation_name:
-            self.custom_animation_name = f"{self.topic.name.capitalize()}-{self.id}"
+            self.custom_animation_name = f"{self.topic.name.capitalize()}-{self.create_date.strftime('%Y%m%d%H%M%S')}"
         super().save(*args, **kwargs)
 
     class Meta:
         verbose_name = 'Sort Algorithm Model'
         verbose_name_plural = 'Sort Algorithm Model'
     def __str__(self):
-        return f"{self.id} - {self.user.username.capitalize()} - {self.topic.name.capitalize()}"
-
+        return f"{self.user.username.capitalize()} - {self.topic.name.capitalize()} - {self.create_date.strftime('%Y%m%d%H%M%S')}"
 class SearchModel(models.Model):
     id = models.AutoField(primary_key=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -78,7 +77,7 @@ class SearchModel(models.Model):
 
     def save(self, *args, **kwargs):
         if not self.custom_animation_name:
-            self.custom_animation_name = f"{self.topic.name.capitalize()}-{self.id}"
+            self.custom_animation_name = f"{self.topic.name.capitalize()}-{self.create_date.strftime('%Y%m%d%H%M%S')}"
         super().save(*args, **kwargs)
 
     class Meta:
@@ -86,4 +85,4 @@ class SearchModel(models.Model):
         verbose_name_plural = 'Search Algorithm Model'
 
     def __str__(self):
-        return f"{self.id} - {self.user.username.capitalize()} - {self.topic.name.capitalize()}"
+        return f"{self.user.username.capitalize()} - {self.topic.name.capitalize()} - {self.create_date.strftime('%Y%m%d%H%M%S')}"
