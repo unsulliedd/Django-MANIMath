@@ -36,8 +36,15 @@ INSTALLED_APPS = [
     'MANIMath_Data',
     'MANIMath_Api',
     'rest_framework',
+    'rest_framework.authtoken',
     'fontawesomefree',
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+    ],
+}
 
 # Middleware framework
 # https://docs.djangoproject.com/en/4.2/topics/http/middleware/
