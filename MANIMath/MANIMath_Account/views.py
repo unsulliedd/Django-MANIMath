@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login as auth_login, logout as auth_logout
+from rest_framework.authtoken.models import Token
 from .forms import *
 
 def register(request):
@@ -7,7 +8,8 @@ def register(request):
         form = SignUpForm(request.POST, request.FILES)
         if form.is_valid():
             user = form.save()
-            auth_login(request ,user)
+            Token.objects.get_or_create(user=user)
+            auth_login(request, user)
             return redirect('home')
     else:
         form = SignUpForm()
@@ -22,6 +24,8 @@ def login(request):
             user = authenticate(username=username, password=password)
             if user is not None:
                 auth_login(request, user)
+                Token.objects.get_or_create(user=user)
+                
                 remember_me = request.POST.get('remember_me')
                 if remember_me:
                     request.session.set_expiry(None)  # Persistent cookie
