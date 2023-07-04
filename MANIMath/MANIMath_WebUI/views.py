@@ -2,6 +2,7 @@ import subprocess,os,re
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpRequest, JsonResponse
 from django.template.loader import render_to_string
+from django.contrib.auth.decorators import login_required
 from datetime import datetime
 from django.db.models import Q
 from .models import *
@@ -60,6 +61,7 @@ def topic_detail(request, topic_name):
         }
     )
 
+@login_required(login_url='login')
 def create_animation(request, topic_name):
     
     topic = get_object_or_404(Topic, name=topic_name)
