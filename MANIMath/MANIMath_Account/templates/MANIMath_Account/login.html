@@ -6,7 +6,7 @@
 
 <div class="container d-flex justify-content-center login_container">
     <div class="account_group">
-        <form method="post" style="width:100%">
+        <form method="post" action="{% url 'login' %}?next={{ request.GET.next }}" style="width:100%">
             {% csrf_token %}
             <div class="form-group">
                 <p class="account_form_label">{{ form.username.label_tag }}</p>
