@@ -14,6 +14,7 @@
         <a class="dropdown-item" href="#">History</a>
         {% if user.is_superuser %}
         <a class="dropdown-item" href="{% url 'admin:index' %}">Admin</a>
+        <a class="dropdown-item" href="{% url 'api-root' %}">Api</a>
         {% endif %}
         <a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
         <div role="separator" class="dropdown-divider"></div>
