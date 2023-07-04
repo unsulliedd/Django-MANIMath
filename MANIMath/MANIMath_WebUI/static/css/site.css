@@ -338,3 +338,27 @@ div.detail_info_text .detail_info_header {
     }
 
 /************* Topic Detail *************/
+
+
+/************* Create Animation *************/
+
+.main .create_animation_main {
+    display: flex;
+    width: 100%
+}
+
+.create_animation_main .create_form_section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.create_animation_main .create_video_section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/************* Create Animation *************/
