@@ -32,7 +32,11 @@ def login(request):
                 else:
                     request.session.set_expiry(0)
 
-                return redirect('home')
+                next_url = request.GET.get('next')
+                if next_url:
+                    return redirect(next_url)
+                else:
+                    return redirect('home')
     else:
         form = LoginForm()
     return render(request, 'MANIMath_Account/login.html', {'form': form})
