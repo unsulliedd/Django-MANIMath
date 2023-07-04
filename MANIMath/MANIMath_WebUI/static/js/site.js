@@ -59,3 +59,32 @@ darkModeToggle.addEventListener('click', () => {
 applyTheme();  // Apply the theme
 
 /************** Dark Mode Script **************/
+
+/************** Loading Spinner **************/
+$(document).ready(function () {
+    $('#animation-form').submit(function (event) {
+        event.preventDefault();
+
+        $('#loading-spinner').show();
+
+        $.ajax({
+            type: "POST",
+            url: $(this).attr('action'),
+            data: $(this).serialize(),
+            success: function (response) {
+                var videoHtml = response.video_html;
+
+                $('#video-container').html(videoHtml);
+                $('#loading-spinner').hide();
+                $('#animation-form')[0].reset();
+
+            },
+            error: function (xhr, errmsg, err) {
+                console.log(xhr.status + ": " + xhr.responseText);
+                $('#loading-spinner').hide();
+            }
+        });
+    });
+});
+
+/************** Loading Spinner **************/
