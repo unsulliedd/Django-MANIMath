@@ -43,8 +43,10 @@ INSTALLED_APPS = [
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework.authentication.TokenAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
     ],
 }
+
 
 # Middleware framework
 # https://docs.djangoproject.com/en/4.2/topics/http/middleware/
