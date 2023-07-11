@@ -14,6 +14,7 @@ class Category(models.Model):
 class Topic(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=100)
+    animation_class = models.CharField(max_length=100, blank=True, null=True)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     description = models.TextField(blank=True, null=True, default=None)
     defination_url = models.URLField(blank=True, null=True)
