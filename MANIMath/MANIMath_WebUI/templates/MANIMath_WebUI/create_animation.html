@@ -6,18 +6,85 @@
 
 <div class="container create_animation_main">
     <section class="create_form_section">
-        <div>
-            <div>
-                <div>
-                    <h2>Create {{topic.name}} Animation</h2>
-                    <form id="animation-form" method="post" action="{% url 'create_animation' topic_name=topic.name %}">
-                        {% csrf_token %}
-                        {{form.as_p}}
-                        <button type="submit">Create</button>
-                    </form>
-                </div>
+        <h2>Create {{topic.name}} Animation</h2>
+        <form id="animation-form" method="post" action="{% url 'create_animation' topic_name=topic.name %}">
+            {% csrf_token %}
+            <div class="form-group create_animation_form mt-3">
+                {% if  form.equation %}
+                {% if not topic.name == "Fourier Transform" or "Lagrange Polynomial" %}
+                <label class="me-1" for="{{ form.equation.id_for_label }}">Equation:</label>
+                {{ form.equation }}
+                {% endif%}
+                {% endif%}
+                {% if  form.equation_2 %}
+                <label class="me-1" for="{{ form.equation_2.id_for_label }}">Equation 2:</label>
+                {{ form.equation_2 }}
+                {% endif%}
+                {% if  form.input_array %}
+                <label class="me-1" for="{{ form.input_array.id_for_label }}">Input:</label>
+                {{ form.input_array }}
+                {% endif%}
             </div>
-        </div>
+            <div class="form-group create_animation_form mt-3">
+                <label class="me-2" for="{{ form.x_range.id_for_label }}">X Range:</label>
+                {{ form.x_range }}
+                <label class="me-2" for="{{ form.y_range.id_for_label }}">Y Range:</label>
+                {{ form.y_range }}
+            </div>
+            <div class="form-group create_animation_form mt-3">
+                <label class="me-1" for="{{ form.x_length.id_for_label }}">X Length:</label>
+                {{ form.x_length }}
+                <label class="me-1" for="{{ form.y_length.id_for_label }}">Y Length:</label>
+                {{ form.y_length }}
+            </div>
+            {% if  form.point_1 and form.point_2 and form.iteration %}
+            <div class="form-group create_animation_form mt-3">
+                <label class="me-2" for="{{ form.point_1.id_for_label }}">Point 1:</label>
+                {{ form.point_1 }}
+                <label class="me-2" for="{{ form.point_2.id_for_label }}">Point 2:</label>
+                {{ form.point_2 }}
+            </div>
+            <div class="form-group create_animation_form mt-3">
+                <label for="{{ form.iteration.id_for_label }}">Iteration:</label>
+                {{ form.iteration }}
+            </div>
+            {% endif%}
+            {% if  form.equation_color and form.axes_color %}
+            <div class="form-group create_animation_form mt-3">
+                <label class="me-2" for="{{ form.equation_color.id_for_label }}">Equation Color:</label>
+                {{ form.equation_color }}
+                <label class="me-2" for="{{ form.axes_color.id_for_label }}">Axes Color:</label>
+                {{ form.axes_color }}
+            </div>
+            {% endif%}
+            {% if  form.line_color or form.tangent_color %}
+            <div class="form-group create_animation_form mt-3">
+                {% if  form.tangent_color %}
+                <label class="me-2" for="{{ form.line_color.id_for_label }}">Line Color:</label>
+                {{ form.line_color }}
+                {% endif%}
+                {% if  form.tangent_color %}
+                <label class="me-2" for="{{ form.tangent_color.id_for_label }}">Tangent Color:</label>
+                {{ form.tangent_color }}
+                {% endif%}
+            </div>
+            {% endif%}
+            <div class="form-group create_animation_form mt-3">
+                <label class="me-2" for="{{ form.shape_color.id_for_label }}">Shape Color:</label>
+                {{ form.shape_color }}
+            </div>
+            <div class="form-group create_animation_form mt-3">
+                <label class="me-2" for="{{ form.scale.id_for_label }}">Scale:</label>
+                {{ form.scale }}
+            </div>
+            <div class="form-group create_animation_form mt-3">
+                <label class="me-2" for="{{ form.include_tip.id_for_label }}">Include Tip:</label>
+                {{ form.include_tip }}
+                <label class="me-2" for="{{ form.include_numbers.id_for_label }}">Include Numbers:</label>
+                {{ form.include_numbers }}
+            </div>
+            <button class="detail_create_btn btn mt-3" type="submit">Create</button>
+        </form>
     </section>
     <section id="video-container" class="create_video_section">
         {% include 'partials/_video_section.html'%}

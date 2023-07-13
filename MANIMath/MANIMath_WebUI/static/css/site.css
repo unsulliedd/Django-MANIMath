@@ -239,6 +239,8 @@
     justify-content: space-around;
     align-items: flex-start;
     width: 100%;
+    margin-bottom: 30px;
+    margin-top: -20px;
 }
 
 .detail_description {
@@ -254,6 +256,7 @@
 
     .detail_description p {
         text-indent: 25px;
+        white-space: pre-wrap;
     }
 
 .detail_panel_wrapper {
@@ -359,6 +362,10 @@ div.detail_info_text .detail_info_header {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.main .create_animation_main .create_form_section .create_animation_form {
+    width: 100%;
 }
 
 /************* Create Animation *************/
