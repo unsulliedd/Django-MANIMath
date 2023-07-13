@@ -1,4 +1,4 @@
-import subprocess,os,re
+import subprocess
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpRequest, JsonResponse
 from django.template.loader import render_to_string
@@ -7,8 +7,6 @@ from datetime import datetime
 from django.db.models import Q
 from .models import *
 from .forms import *
-from MANIMath_Data.animations import animations
-from rest_framework.authtoken.models import Token
 
 def home(request: HttpRequest):
     return render(request,
@@ -90,41 +88,50 @@ def create_animation(request, topic_name):
         form_class = form_model_dict[category]["form_class"]
         model_class = form_model_dict[category]['model_class']
 
-    form = form_class()
+    if topic_name == 'Integral' and category == "Functions":
+        show_equation2 = (topic_name == 'Integral')
+        form = form_class(show_equation2=show_equation2)
+    elif (topic_name == 'Lagrange Polynomial' or topic_name == 'Fourier Transform') and category == "Functions":
+        show_input = (topic_name == 'Lagrange Polynomial' or topic_name == 'Fourier Transform')
+        form = form_class(show_input=show_input)
+    elif category == "Functions":
+        show_fields = (topic_name == 'Chebyshev Iteration' or topic_name == 'Simpson\'s Rule' 
+                       or topic_name == 'Backward Difference Method'
+                       or topic_name == 'Boole\'s Rule' or topic_name == 'Riemann Sum' or topic_name == 'Left Endpoint Rule'
+                       or topic_name == 'Trapezoidal Rule')
+        form = form_class(show_fields=show_fields)
+    else:
+        form = form_class()
 
     if request.method == 'POST':
-        form = form_class(request.POST)
+        if topic_name == 'Integral' and category == "Functions":
+            show_equation2 = (topic_name == 'Integral')
+            form = form_class(request.POST,show_equation2=show_equation2)
+        elif (topic_name == 'Lagrange Polynomial' or topic_name == 'Fourier Transform') and category == "Functions":
+            show_input = (topic_name == 'Lagrange Polynomial' or topic_name == 'Fourier Transform')
+            form = form_class(request.POST,show_input=show_input)
+        elif category == "Functions":
+            show_fields = (topic_name == 'Chebyshev Iteration' or topic_name == 'Simpson\'s Rule' 
+                           or topic_name == 'Backward Difference Method'
+                           or topic_name == 'Boole\'s Rule' or topic_name == 'Riemann Sum' or topic_name == 'Left Endpoint Rule'
+                           or topic_name == 'Trapezoidal Rule')
+            form = form_class(request.POST,show_fields=show_fields,)
+        else:
+            form = form_class(request.POST)
 
         if form.is_valid():
-            model_class = form.save(commit=False)
-            model_class.user = request.user
-            model_class.topic = topic
-            model_class.category = topic.category
-            model_class.save()
-
-        #try:
-        #    token = Token.objects.get(user=request.user)
-        #except Token.DoesNotExist:
-        #    token = Token.objects.create(user=request.user)
-
-        #token_str = str(token)
-        #animations_file_path = os.path.join("MANIMath_Data/animations.py")
-        #with open(animations_file_path, "r") as file:
-        #    lines = file.readlines()
-
-        #with open(animations_file_path, "w") as file:
-        #    for line in lines:
-        #        if "'Authorization': '" in line:
-        #            header_value = re.search(r"'([^']*)'", line).group(1)
-        #            line = line.replace(header_value, token_str)
-        #        file.write(line)
+            model_instance = form.save(commit=False)
+            model_instance.user = request.user
+            model_instance.topic = topic
+            model_instance.category = topic.category
+            model_instance.save()
 
         video_quality = "-qh"
         script_path = "MANIMath_Data/animations.py"
-        command = f'manim {video_quality} {script_path} {topic.name}'
+        command = f'manim {video_quality} {script_path} {topic.animation_class}'
         try:
             subprocess.run(command, check=True)
-            video_path = f"../../static/media/manim/videos/animations/1080p60/{topic.name}.mp4"
+            video_path = f"../../static/media/manim/videos/animations/1080p60/{topic.animation_class}.mp4"
             video_html = render_to_string('partials/_video_section.html', {'video_path': video_path})
             return JsonResponse({'video_html': video_html})
 
