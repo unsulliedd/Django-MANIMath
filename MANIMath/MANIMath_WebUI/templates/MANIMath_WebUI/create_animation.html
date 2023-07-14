@@ -24,19 +24,27 @@
                 <label class="me-1" for="{{ form.input_array.id_for_label }}">Input:</label>
                 {{ form.input_array }}
                 {% endif%}
+                {% if  form.target %}
+                <label class="me-1" for="{{ form.target.id_for_label }}">Target:</label>
+                {{ form.target }}
+                {% endif%}
             </div>
+            {% if  form.x_range and form.y_range %}
             <div class="form-group create_animation_form mt-3">
                 <label class="me-2" for="{{ form.x_range.id_for_label }}">X Range:</label>
                 {{ form.x_range }}
                 <label class="me-2" for="{{ form.y_range.id_for_label }}">Y Range:</label>
                 {{ form.y_range }}
             </div>
+            {% endif%}
+            {% if  form.x_length and form.y_length %}
             <div class="form-group create_animation_form mt-3">
                 <label class="me-1" for="{{ form.x_length.id_for_label }}">X Length:</label>
                 {{ form.x_length }}
                 <label class="me-1" for="{{ form.y_length.id_for_label }}">Y Length:</label>
                 {{ form.y_length }}
             </div>
+            {% endif%}
             {% if  form.point_1 and form.point_2 and form.iteration %}
             <div class="form-group create_animation_form mt-3">
                 <label class="me-2" for="{{ form.point_1.id_for_label }}">Point 1:</label>
@@ -77,12 +85,14 @@
                 <label class="me-2" for="{{ form.scale.id_for_label }}">Scale:</label>
                 {{ form.scale }}
             </div>
+            {% if  form.include_tip and form.include_numbers %}
             <div class="form-group create_animation_form mt-3">
                 <label class="me-2" for="{{ form.include_tip.id_for_label }}">Include Tip:</label>
                 {{ form.include_tip }}
                 <label class="me-2" for="{{ form.include_numbers.id_for_label }}">Include Numbers:</label>
                 {{ form.include_numbers }}
             </div>
+            {% endif%}
             <button class="detail_create_btn btn mt-3" type="submit">Create</button>
         </form>
     </section>
