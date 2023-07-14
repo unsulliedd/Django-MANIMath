@@ -49,7 +49,6 @@ class SortForm(forms.ModelForm):
         model = SortModel
         fields = [
             'input_array',
-            'target', 
             'text_color', 'line_color', 'shape_color',
             'scale',
         ]
@@ -59,6 +58,7 @@ class SearchForm(forms.ModelForm):
         model = SearchModel
         fields = [
             'input_array',
+            'target', 
             'text_color', 'line_color', 'shape_color',
             'scale',
         ]
