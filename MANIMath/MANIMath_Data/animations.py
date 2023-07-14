@@ -1256,3 +1256,121 @@ class BisectionMethod(Scene):
         self.play(Write(final_interval_label))
         
         self.wait(2)
+
+
+############################# Bubble Sort ################################
+
+class BubbleSort(Scene):
+    def construct(self):
+        data = api_call()
+        sort_model = data["sort_models"][-1]
+
+        data = [int(i) for i in sort_model["input_array"].split(',')]
+        shape_color = sort_model["shape_color"]
+
+        title = Text("Bubble Sort", font_size=40)
+        title.to_edge(UP)
+        self.play(Write(title))
+        self.wait()
+
+        circles = self.get_circles(data)
+        self.play(*[Create(circle) for circle in circles])
+        
+        n = len(data)
+        for i in range(n):
+            for j in range(0, n-i-1):
+                if data[j] > data[j+1]:
+                    data[j], data[j+1] = data[j+1], data[j]
+                    self.swap_circles(circles[j], circles[j+1])
+                    circles[j], circles[j+1] = circles[j+1], circles[j]
+        
+        self.wait(2)
+        
+    def get_circles(self, data):
+        circles = [Circle(radius=0.5, fill_opacity=0.8, fill_color=YELLOW) for item in data]
+        for i in range(len(circles)):
+            circles[i].next_to(circles[i-1], RIGHT, buff=0.2)
+            text = Text(str(data[i]))
+            text.move_to(circles[i].get_center())
+            circles[i].add(text)
+        group = Group(*circles)
+        group.center()
+        return circles
+    
+    def swap_circles(self, circle1, circle2):
+        self.play(
+            Swap(circle1,circle2),
+            run_time=0.5
+        )
+
+############################### Binary Search ####################################
+
+class BinarySearch(Scene):
+    def construct(self):
+        data = api_call()
+        search_model = data["search_models"][-1]
+
+        data = [int(i) for i in search_model["input_array"].split(',')]
+        target = search_model["target"]
+               
+        title = Text("Binary Search", font_size=40)
+        title.to_edge(UP)
+        self.play(Write(title))
+        self.wait()
+
+        target_text = Text("Target: " + str(target), font_size=36)
+        target_text.next_to(title, DOWN)
+        self.play(Write(target_text))
+        self.wait()
+
+        data_text = VGroup()
+        squares = VGroup()
+        for num in data:
+            square = Square(side_length=1)
+            text = Text(str(num))
+            text.scale(0.7)
+            group = VGroup(square, text).scale(0.7)
+            data_text.add(group)
+            squares.add(square)
+
+        data_text.arrange(RIGHT, buff=0.5)
+        data_text.next_to(target_text, DOWN, buff=2)
+        self.play(Create(data_text))
+        self.wait()
+
+        index_labels = VGroup()
+        for i in range(len(data)):
+            label = Tex(str(i))
+            label.next_to(squares[i], DOWN)
+            index_labels.add(label)
+            self.add(label)
+
+        left = 0
+        right = len(data) - 1
+        while left <= right:
+            mid = (left + right) // 2
+            self.play(squares[mid].animate.set_color(RED))
+            self.wait()
+
+            if data[mid] == target:
+                self.play(squares[mid].animate.set_color(GREEN))
+                self.wait()
+                self.play(
+                    ApplyMethod(squares.shift, DOWN*2),
+                    ApplyMethod(index_labels.shift, DOWN*2),
+                    ApplyMethod(data_text.shift, DOWN*2)
+                )                
+                self.wait()
+                result_text = Text("Target found at index " + str(mid))
+                self.play(Transform(target_text, result_text))
+                self.wait()
+                break
+            elif data[mid] < target:
+                self.play(squares[left:mid].animate.set_color(GRAY))
+                self.wait()
+                left = mid + 1
+            else:
+                self.play(squares[mid + 1 : right + 1].animate.set_color(GRAY))
+                self.wait()
+                right = mid - 1
+        self.wait(4)
