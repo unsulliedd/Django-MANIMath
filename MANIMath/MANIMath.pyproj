@@ -3,7 +3,7 @@
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <Name>MANIMath</Name>
     <RootNamespace>MANIMath</RootNamespace>
-    <InterpreterId>MSBuild|MANIMath_Venv|$(MSBuildProjectFullPath)</InterpreterId>
+    <InterpreterId>MSBuild|MANIMath_Env|$(MSBuildProjectFullPath)</InterpreterId>
     <WebBrowserPort>61000</WebBrowserPort>
     <TestFramework>unittest</TestFramework>
   </PropertyGroup>
@@ -101,8 +101,8 @@
     <Content Include="MANIMath_WebUI\templates\partials\_loading.html" />
     <Content Include="MANIMath_WebUI\templates\partials\_video_section.html" />
     <Content Include="MANIMath_WebUI\templates\shared\layout.html" />
-    <Content Include="requirements.txt" />
     <Content Include="MANIMath_WebUI\static\media\img\favicon.ico" />
+    <Content Include="requirements.txt" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="MANIMath\" />
@@ -136,10 +136,10 @@
     <Folder Include="MANIMath_WebUI\templates\shared\" />
   </ItemGroup>
   <ItemGroup>
-    <Interpreter Include="MANIMath_Venv\">
-      <Id>MANIMath_Venv</Id>
-      <Version>3.10</Version>
-      <Description>MANIMath_Venv (Python 3.10 (64-bit))</Description>
+    <Interpreter Include="MANIMath_Env\">
+      <Id>MANIMath_Env</Id>
+      <Version>3.12</Version>
+      <Description>MANIMath_Env (Python 3.12 (64-bit))</Description>
       <InterpreterPath>Scripts\python.exe</InterpreterPath>
       <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
       <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
